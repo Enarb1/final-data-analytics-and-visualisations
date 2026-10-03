@@ -273,18 +273,3 @@ These figures reflect data coverage, not business performance, and should not be
 **Unfiltered time-intelligence totals.** On a totals row with no single year in context, `Revenue YTD` returns the most recent year-to-date period rather than a sum, and `YoY Growth %` compares all years against all shifted years. This is expected behaviour for time intelligence evaluated outside a single-period context, and is the reason a bare YTD measure should not be placed on a card without a year filter.
 
 ---
-
-## 7. Files
-
-```
-DataViz_Project_<username>/
-├── sql/
-│   └── 01_create_views.sql      All five views, re-runnable top to bottom
-├── pbix/
-│   └── NorthwindSales.pbix      Report and model
-└── docs/
-    ├── documentation.md         This file
-    └── screenshots/             Three report pages and model view
-```
-
-The SQL file uses `DROP VIEW IF EXISTS ... CASCADE` before each `CREATE VIEW`, so the whole script can be re-run after any edit. `CREATE OR REPLACE VIEW` alone is insufficient, since PostgreSQL will not permit a column rename or type change through it.
